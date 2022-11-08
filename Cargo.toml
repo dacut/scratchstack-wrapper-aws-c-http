@@ -1,0 +1,32 @@
+[package]
+name = "scratchstack-wrapper-aws-c-http"
+description = "Scratchstack Rust wrapper around the aws-c-http library"
+authors = ["David Cuthbert <dacut@kanga.org>"]
+edition = "2021"
+homepage = "https://github.com/dacut/scratchstack-wrapper-aws-c-http"
+license = "Apache-2.0"
+repository = "https://github.com/dacut/scratchstack-wrapper-aws-c-http"
+version = "0.1.0-alpha.5"
+build = "build.rs"
+include = [
+    "/include/aws/http/*.h",
+    "/include/aws/http/*.inl",
+    "/src",
+    "Cargo.toml",
+    "build.rs",
+]
+links = "aws-c-http"
+
+[lib]
+name = "scratchstack_wrapper_aws_c_http"
+crate-type = ["lib"]
+doctest = false
+
+[build-dependencies]
+bindgen = "^0.61"
+
+[dependencies]
+scratchstack-wrapper-aws-c-io = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-common = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-compression = "=0.1.0-alpha.6"
+libc = "^0.2"
